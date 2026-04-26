@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 
-export default function About() {
+export default function Nosotros() {
   return (
     <div className="pt-40 pb-32 px-6">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +20,7 @@ export default function About() {
                 MazterCaps comenzó con una misión clara: ofrecer a los colombianos acceso a gorras de la más alta calidad que no se encuentran en cualquier lugar.
               </p>
               <p>
-                Fundada en 2022, nos hemos convertido en el referente del headwear premium en el país. Seleccionamos cada pieza pensando en los detalles, la durabilidad y, sobre todo, el estilo.
+                Fundada en 2018. Seleccionamos cada pieza pensando en los detalles, la durabilidad y, sobre todo, el estilo.
               </p>
             </div>
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed font-medium text-gray-900">
