@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { PRODUCTS } from '../constants';
 import { useCart } from '../context/CartContext';
 
-export default function ProductDetails() {
+export default function DetallesDeProducto() {
   const { id } = useParams();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -15,8 +15,8 @@ export default function ProductDetails() {
   if (!product) {
     return (
       <div className="pt-40 pb-20 text-center">
-        <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
-        <Link to="/shop" className="text-gray-500 underline uppercase tracking-widest text-sm">Back to Shop</Link>
+        <h1 className="text-2xl font-bold mb-4">Productos no encontrados</h1>
+        <Link to="/Tienda" className="text-gray-500 underline uppercase tracking-widest text-sm">Volver a la tienda</Link>
       </div>
     );
   }
@@ -24,9 +24,9 @@ export default function ProductDetails() {
   return (
     <div className="pt-32 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <Link to="/shop" className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors mb-12">
+        <Link to="/Tienda" className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors mb-12">
           <ChevronLeft className="w-4 h-4" />
-          <span>Back to Collection</span>
+          <span>Volver a la colección</span>
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
@@ -101,15 +101,15 @@ export default function ProductDetails() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
                 <ShieldCheck className="w-5 h-5 mb-3 text-gray-400" />
-                <p className="text-[10px] font-bold uppercase tracking-widest">Secure Payments</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest">Pagos Seguros</p>
               </div>
               <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
                 <Truck className="w-5 h-5 mb-3 text-gray-400" />
-                <p className="text-[10px] font-bold uppercase tracking-widest">Fast Shipping</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest">Envío Rápido</p>
               </div>
               <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
                 <RefreshCw className="w-5 h-5 mb-3 text-gray-400" />
-                <p className="text-[10px] font-bold uppercase tracking-widest">Easy Returns</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest">Fácil  Devolución</p>
               </div>
             </div>
           </motion.div>
