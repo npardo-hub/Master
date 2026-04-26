@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { useCart } from '../context/CartContext';
 
-export default function Home() {
+export default function Inicio() {
   const { addToCart } = useCart();
   const featuredProducts = PRODUCTS.slice(0, 3);
 
@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="text-white/80 text-sm font-bold uppercase tracking-[0.4em] mb-6"
           >
-            Premium Headwear Colombia
+            Gorras de Alta calidad
           </motion.p>
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
@@ -65,10 +65,10 @@ export default function Home() {
             transition={{ delay: 0.9 }}
           >
             <Link 
-              to="/shop" 
+              to="/Tienda" 
               className="group inline-flex items-center space-x-3 bg-white text-gray-900 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-all hover:scale-105 active:scale-95"
             >
-              <span>Explore Collection</span>
+              <span>Explora Nuestra Colección</span>
               <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
@@ -80,11 +80,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-4">Latest Drops</h2>
-              <h3 className="text-4xl font-bold tracking-tight text-gray-900">Featured Essentials.</h3>
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-4">Últimas Novedades</h2>
+              <h3 className="text-4xl font-bold tracking-tight text-gray-900">Productos Destacados.</h3>
             </div>
-            <Link to="/shop" className="text-sm font-bold uppercase tracking-widest border-b-2 border-gray-900 pb-1 hover:text-gray-500 hover:border-gray-500 transition-all flex items-center group">
-              View All <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Link to="/Tienda" className="text-sm font-bold uppercase tracking-widest border-b-2 border-gray-900 pb-1 hover:text-gray-500 hover:border-gray-500 transition-all flex items-center group">
+              Ver Todo <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -142,10 +142,10 @@ export default function Home() {
                 PASIÓN POR <br /> LAS GORRAS.
               </h3>
               <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-lg">
-                MazterCaps nació en el corazón de Colombia con el objetivo de traer las mejores tendencias globales de headwear. No somos solo una tienda, somos un estilo de vida que celebra la individualidad.
+                MazterCaps nació en el corazón de Colombia con el objetivo de traer las mejores tendencias globales de gorras. No somos solo una tienda, somos un estilo de vida que celebra la individualidad.
               </p>
-              <Link to="/about" className="inline-flex items-center space-x-3 text-white font-bold uppercase tracking-widest group">
-                <span>The Story</span>
+              <Link to="/Nosotros" className="inline-flex items-center space-x-3 text-white font-bold uppercase tracking-widest group">
+                <span>Nuestra Historia</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
               </Link>
             </motion.div>
@@ -181,7 +181,7 @@ export default function Home() {
           <form className="flex flex-col sm:flex-row gap-4">
             <input 
               type="email" 
-              placeholder="Email Address" 
+              placeholder="Dirección de Correo EMAIL" 
               className="flex-1 px-6 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors text-sm uppercase tracking-widest font-medium"
               required
             />
@@ -189,7 +189,7 @@ export default function Home() {
               type="submit"
               className="bg-gray-900 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95 whitespace-nowrap"
             >
-              Subscribe
+              Subscribete
             </button>
           </form>
         </div>
