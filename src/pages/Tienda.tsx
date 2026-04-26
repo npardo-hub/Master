@@ -6,7 +6,7 @@ import { PRODUCTS } from '../constants';
 import { useCart } from '../context/CartContext';
 import { cn } from '../lib/utils';
 
-export default function Shop() {
+export default function Tienda() {
   const [filter, setFilter] = useState<string>('All');
   const [sortBy, setSortBy] = useState<string>('featured');
   const { addToCart } = useCart();
@@ -60,9 +60,9 @@ export default function Shop() {
                 onChange={(e) => setSortBy(e.target.value)}
                 className="appearance-none bg-transparent pl-4 pr-10 py-2 text-sm font-bold uppercase tracking-widest border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors cursor-pointer"
               >
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
+                <option value="featured">Filtrar  por</option>
+                <option value="price-low">Precio: Bajo hasta Alto</option>
+                <option value="price-high">Precio: Alto hasta Bajo</option>
               </select>
               <SlidersHorizontal className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" />
             </div>
@@ -92,7 +92,7 @@ export default function Shop() {
                     />
                     {!product.inStock && (
                       <div className="absolute top-4 left-4 bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-900">
-                        Sold Out
+                        Agotado
                       </div>
                     )}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
@@ -110,7 +110,7 @@ export default function Shop() {
                       disabled={!product.inStock}
                       className="text-xs font-bold uppercase tracking-widest border-b border-gray-900 pb-0.5 hover:text-gray-500 hover:border-gray-500 transition-all disabled:opacity-50 disabled:border-gray-400 disabled:text-gray-400 disabled:cursor-not-allowed"
                     >
-                      Add to Cart
+                      Añadir al carrito
                     </button>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function Shop() {
 
         {filteredProducts.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-gray-500 uppercase tracking-widest font-medium">No products found for this selection.</p>
+            <p className="text-gray-500 uppercase tracking-widest font-medium">No se encontraron productos para la selección.</p>
           </div>
         )}
       </div>
