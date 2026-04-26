@@ -14,15 +14,15 @@ export default function Cart() {
             <ShoppingBag className="w-10 h-10 text-gray-300" />
           </div>
         </div>
-        <h1 className="text-3xl font-bold mb-4 tracking-tight">Your Bag is Empty</h1>
+        <h1 className="text-3xl font-bold mb-4 tracking-tight">Tu carrito está vacío.</h1>
         <p className="text-gray-500 mb-12 leading-relaxed">
           Parece que no has añadido nada a tu carrito. Explora nuestra colección y encuentra tu nueva gorra favorita.
         </p>
         <Link 
-          to="/shop" 
+          to="/Tienda" 
           className="inline-block bg-gray-900 text-white px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95"
         >
-          Start Shopping
+          Empezar a comprar
         </Link>
       </div>
     );
@@ -31,7 +31,7 @@ export default function Cart() {
   return (
     <div className="pt-32 pb-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-xs font-bold uppercase tracking-[0.4em] text-gray-400 mb-8">Shopping Bag</h1>
+        <h1 className="text-xs font-bold uppercase tracking-[0.4em] text-gray-400 mb-8">Carrito de compra</h1>
         <h2 className="text-6xl font-bold tracking-tighter leading-none mb-20">{totalItems} Item{totalItems !== 1 ? 's' : ''}.</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -95,19 +95,19 @@ export default function Cart() {
 
           {/* Summary */}
           <div className="lg:col-span-4 sticky top-40 bg-gray-50 p-10 border border-gray-100">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 font-primary">Order Summary</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 font-primary">Resumen del pedido</h3>
               <div className="space-y-6 mb-10">
                 <div className="flex justify-between text-sm font-medium">
                   <span className="text-gray-500">Subtotal</span>
                   <span>${totalPrice.toLocaleString('de-DE')}</span>
                 </div>
                 <div className="flex justify-between text-sm font-medium">
-                  <span className="text-gray-500">Shipping</span>
-                  <span className="text-green-600">Free</span>
+                  <span className="text-gray-500">Envío</span>
+                  <span className="text-green-600">Gratis</span>
                 </div>
                 <div className="flex justify-between text-sm font-medium">
-                  <span className="text-gray-500">Tax</span>
-                  <span>Calculated at checkout</span>
+                  <span className="text-gray-500">Impuestos</span>
+                  <span>Calculado al final de la compra</span>
                 </div>
                 <div className="pt-6 border-t border-gray-200 flex justify-between">
                   <span className="text-lg font-bold tracking-tight">Total</span>
@@ -116,15 +116,15 @@ export default function Cart() {
               </div>
             
             <Link 
-              to="/checkout"
+              to="/Confirmacion"
               className="w-full bg-gray-900 text-white flex items-center justify-center space-x-3 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-[0.98] group"
             >
-              <span>Continue to Checkout</span>
+              <span>Continuar la compra</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
             <p className="mt-8 text-[10px] text-gray-400 text-center leading-relaxed uppercase tracking-widest">
-              By proceeding, you agree to our <br /> terms of service and privacy policy.
+              Al continuar, acepta nuestros <br /> términos de servicio y política de privacidad.
             </p>
           </div>
         </div>
