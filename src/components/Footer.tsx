@@ -25,22 +25,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 font-primary">Shopping</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 font-primary">Compras</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/shop" className="hover:text-gray-500 transition-colors">All Products</Link></li>
-              <li><Link to="/shop" className="hover:text-gray-500 transition-colors">Best Sellers</Link></li>
-              <li><Link to="/shop" className="hover:text-gray-500 transition-colors">New Arrivals</Link></li>
-              <li><Link to="/shop" className="hover:text-gray-500 transition-colors">Accessories</Link></li>
+              <li><Link to="/Tienda" className="hover:text-gray-500 transition-colors">Todos nuestros productos</Link></li>
+              <li><Link to="/Tienda" className="hover:text-gray-500 transition-colors">Más Vendidos</Link></li>
+              <li><Link to="/Tienda" className="hover:text-gray-500 transition-colors">Novedades</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 font-primary">Information</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/about" className="hover:text-gray-500 transition-colors">Our Story</Link></li>
-              <li><Link to="/contact" className="hover:text-gray-500 transition-colors">Contact Us</Link></li>
-              <li><a href="#" className="hover:text-gray-500 transition-colors">Shipping & Returns</a></li>
-              <li><a href="#" className="hover:text-gray-500 transition-colors">Privacy Policy</a></li>
+              <li><Link to="/Nosotros" className="hover:text-gray-500 transition-colors">Nuestra Historia</Link></li>
+              <li><Link to="/contact" className="hover:text-gray-500 transition-colors">Contactanos</Link></li>
             </ul>
           </div>
         </div>
