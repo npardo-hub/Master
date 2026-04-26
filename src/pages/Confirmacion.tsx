@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, Lock, CreditCard, Truck, CheckCircle2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
-export default function Checkout() {
+export default function Confirmacion() {
   const { cart, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -46,9 +46,9 @@ export default function Checkout() {
       setIsSuccess(true);
       clearCart();
     } catch (error) {
-      console.error("Order creation failed", error);
+      console.error("Error en el pedido", error);
       setIsProcessing(false);
-      alert("Something went wrong with your order. Please try again.");
+      alert("Ha ocurrido un error, intentalo más tarde.");
     }
   };
 
@@ -66,7 +66,7 @@ export default function Checkout() {
           to="/" 
           className="inline-block bg-gray-900 text-white px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-95"
         >
-          Return Home
+          Volver al Inicio
         </Link>
       </div>
     );
@@ -75,8 +75,8 @@ export default function Checkout() {
   if (cart.length === 0 && !isSuccess) {
     return (
       <div className="pt-40 pb-20 text-center">
-        <h1 className="text-2xl font-bold mb-4">No Items to Checkout</h1>
-        <Link to="/shop" className="text-gray-500 underline uppercase tracking-widest text-sm">Back to Shop</Link>
+        <h1 className="text-2xl font-bold mb-4">No hay productos seleccionados</h1>
+        <Link to="/Tienda" className="text-gray-500 underline uppercase tracking-widest text-sm">Back to Shop</Link>
       </div>
     );
   }
@@ -87,21 +87,21 @@ export default function Checkout() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-start">
           {/* Main Form Area */}
           <div className="lg:col-span-8">
-            <Link to="/cart" className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors mb-12">
+            <Link to="/Carrito" className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-gray-900 transition-colors mb-12">
               <ChevronLeft className="w-4 h-4" />
-              <span>Back to Bag</span>
+              <span>Volver al carrito</span>
             </Link>
 
             {/* Stepper */}
             <div className="flex items-center space-x-8 mb-16">
               <div className="flex items-center space-x-3">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${step >= 1 ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-400'}`}>1</div>
-                <span className={`text-[10px] font-bold uppercase tracking-widest ${step >= 1 ? 'text-gray-900' : 'text-gray-400'}`}>Shipping</span>
+                <span className={`text-[10px] font-bold uppercase tracking-widest ${step >= 1 ? 'text-gray-900' : 'text-gray-400'}`}>Envío</span>
               </div>
               <div className="h-[1px] w-12 bg-gray-200" />
               <div className="flex items-center space-x-3">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${step >= 2 ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-400'}`}>2</div>
-                <span className={`text-[10px] font-bold uppercase tracking-widest ${step >= 2 ? 'text-gray-900' : 'text-gray-400'}`}>Payment</span>
+                <span className={`text-[10px] font-bold uppercase tracking-widest ${step >= 2 ? 'text-gray-900' : 'text-gray-400'}`}>Pagos</span>
               </div>
             </div>
 
@@ -118,19 +118,19 @@ export default function Checkout() {
                   <section>
                     <h3 className="text-xl font-bold mb-8 flex items-center">
                       <Truck className="w-5 h-5 mr-3" />
-                      Shipping Information
+                      Información del Envío
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="md:col-span-2">
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Email Address</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Dirección de correo</label>
                         <input type="email" name="email" required value={formData.email} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">First Name</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Nombre</label>
                         <input type="text" name="firstName" required value={formData.firstName} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Last Name</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Apellido</label>
                         <input type="text" name="lastName" required value={formData.lastName} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div className="md:col-span-2">
@@ -138,17 +138,17 @@ export default function Checkout() {
                         <input type="text" name="address" required value={formData.address} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">City</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Ciudad</label>
                         <input type="text" name="city" required value={formData.city} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">ZIP / Postal Code</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Código Postal</label>
                         <input type="text" name="zip" required value={formData.zip} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                     </div>
                   </section>
                   <button type="submit" className="w-full py-5 bg-gray-900 text-white text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-[0.98]">
-                    Continue to Payment
+                    Continuar con el pago
                   </button>
                 </motion.form>
               ) : (
@@ -163,19 +163,19 @@ export default function Checkout() {
                   <section>
                     <h3 className="text-xl font-bold mb-8 flex items-center">
                       <CreditCard className="w-5 h-5 mr-3" />
-                      Payment Details
+                      Detalles del pago
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="md:col-span-2">
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Name on Card</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Nombre en la tarjeta</label>
                         <input type="text" name="cardName" required value={formData.cardName} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div className="md:col-span-2">
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Card Number</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Número de tarjeta</label>
                         <input type="text" name="cardNumber" required placeholder="0000 0000 0000 0000" value={formData.cardNumber} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Expiry Date</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Fecha de Expiración</label>
                         <input type="text" name="expiry" required placeholder="MM/YY" value={formData.expiry} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
@@ -186,18 +186,18 @@ export default function Checkout() {
                   </section>
                   <div className="flex gap-4">
                     <button type="button" onClick={() => setStep(1)} className="flex-1 py-5 border border-gray-200 text-gray-400 text-sm font-bold uppercase tracking-widest hover:border-gray-900 hover:text-gray-900 transition-all">
-                      Back
+                      Volver
                     </button>
                     <button type="submit" disabled={isProcessing} className="flex-[2] py-5 bg-gray-900 text-white text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center space-x-3">
                       {isProcessing ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-                          <span>Processing...</span>
+                          <span>Procesando...</span>
                         </>
                       ) : (
                         <>
                           <Lock className="w-4 h-4" />
-                          <span>Complete Order</span>
+                          <span>Orden Completada</span>
                         </>
                       )}
                     </button>
@@ -210,7 +210,7 @@ export default function Checkout() {
           {/* Right Summary Area */}
           <div className="lg:col-span-4 lg:sticky lg:top-40">
             <div className="bg-gray-50 p-10 border border-gray-100">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 font-primary">In Your Bag</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 font-primary">En tu carrito</h3>
               <ul className="space-y-6 mb-10 overflow-y-auto max-h-[300px] scrollbar-hide">
                 {cart.map((item) => (
                   <li key={item.id} className="flex space-x-4">
@@ -220,7 +220,7 @@ export default function Checkout() {
                     <div className="flex-grow">
                       <h4 className="text-sm font-bold tracking-tight mb-1">{item.name}</h4>
                       <div className="flex justify-between items-center">
-                        <span className="text-[10px] text-gray-400 uppercase tracking-widest">Qty: {item.quantity}</span>
+                        <span className="text-[10px] text-gray-400 uppercase tracking-widest">Cantidad: {item.quantity}</span>
                         <span className="text-sm font-bold">${(item.price * item.quantity).toLocaleString('de-DE')}</span>
                       </div>
                     </div>
@@ -234,8 +234,8 @@ export default function Checkout() {
                   <span>${totalPrice.toLocaleString('de-DE')}</span>
                 </div>
                 <div className="flex justify-between text-sm font-medium">
-                  <span className="text-gray-400">Shipping</span>
-                  <span className="text-green-600">Free</span>
+                  <span className="text-gray-400">Envío</span>
+                  <span className="text-green-600">Gratis</span>
                 </div>
               </div>
               <div className="pt-6 border-t border-gray-200 flex justify-between items-end">
