@@ -134,7 +134,7 @@ export default function Confirmacion() {
                         <input type="text" name="lastName" required value={formData.lastName} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div className="md:col-span-2">
-                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Address</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Dirección</label>
                         <input type="text" name="address" required value={formData.address} onChange={handleInputChange} className="w-full px-5 py-4 bg-gray-50 border border-gray-200 focus:outline-none focus:border-gray-900 transition-colors" />
                       </div>
                       <div>
