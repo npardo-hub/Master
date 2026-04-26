@@ -11,9 +11,9 @@ export default function Navbar() {
   const { totalItems } = useCart();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Shop', path: '/shop' },
-    { name: 'Our Story', path: '/about' },
+    { name: 'Inicio', path: '/' },
+    { name: 'Tienda', path: '/Tienda' },
+    { name: 'Nuestra Historia', path: '/Nosotros' },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function Navbar() {
           <button className="hidden sm:block p-2 text-gray-500 hover:text-gray-900 transition-colors">
             <User className="w-5 h-5" />
           </button>
-          <Link to="/cart" className="p-2 text-gray-500 hover:text-gray-900 transition-colors relative">
+          <Link to="/Carrito" className="p-2 text-gray-500 hover:text-gray-900 transition-colors relative">
             <ShoppingBag className="w-5 h-5" />
             {totalItems > 0 && (
               <span className="absolute top-0 right-0 w-4 h-4 bg-gray-900 text-white text-[10px] flex items-center justify-center rounded-full font-bold">
